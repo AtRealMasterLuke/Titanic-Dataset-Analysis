@@ -3,10 +3,21 @@
 # Introduction
 The Titanic dataset is one of the most well-known datasets in data science. It provides data on the passengers aboard the Titanic, including their demographic information and whether they survived the disaster. This project aims to explore this data and perform various analyses to understand the factors influencing survival rates, using Logistic Regression as the main algorithm for prediction.
 # Exploratory Data Analysis
-The current EDA includes:
-- Missing Values Analysis: We analyzed the missing values in the dataset and found that the `deck` column has too many NaNs, leading to its potential exclusion from the analysis.
-- Feature Dropping: Columns that provide similar information, such as `alive`, `class`, and `embarked`, were removed to avoid redundancy.
-More analysis is ongoing, including visualizations and statistical summaries, to identify patterns and correlations.
+## Missing Values
+The dataset initially had missing values in the `age`, `deck`, and `embark_town` columns. The `deck` variable was dropped due to excessive missing values, but before its removal, the following analysis was performed:
+ ## Deck Analysis
+- Visualized the distribution of passengers across different decks.
+- Observed that Deck C had the most passengers, and survival rates were higher on Decks B and C, with Decks A and G being the least safe.
+- After the analysis, the `deck` column was dropped
+ ## Age Imputation
+  The age variable had 177 missing values. Instead of dropping this important feature, the missing values were filled based on the median age within each passenger class (pclass):
+  ## Age imputation strategy
+  - Used a boxplot to analyze the distribution of ages across different passenger classes.
+  - Filled missing ages with the median values: 38 for `pclass=1`, 29 for `pclass=2`, and 24 for `pclass=3`.
+## Embark_Town Missing Values
+Finally, the `embark_town` column had two missing values, which were simply dropped:
+## Final Check
+After these steps, no missing values remained in the dataset
 # Modeling with Logistic Regression
 Logistic Regression is used as the primary machine learning algorithm to predict the likelihood of passenger survival based on the available features. This choice was made due to its effectiveness in binary classification problems, such as survival prediction.
 Future sections will include details on how the model was trained, evaluated, and the insights gained from it.
