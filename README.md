@@ -18,6 +18,21 @@ The dataset initially had missing values in the `age`, `deck`, and `embark_town`
 Finally, the `embark_town` column had two missing values, which were simply dropped:
 ## Final Check
 After these steps, no missing values remained in the dataset
+## Binary Analysis
+The next step in the analysis was to perform a binary analysis on the target variable, `survived`, to determine how different factors might influence the survival of passengers.
+ - ### Survival Analysis:
+      - A count plot was created to visualize the distribution of the survived variable. It was observed that most of the passengers onboard did not survive. The results confirmed that a significant number of passengers lost their lives during the tragedy.
+ - ### Impact of Being Alone:
+      - The `alone` variable (a combination of sibsp and parch) was analyzed to see if being alone affected survival chances.
+      - The analysis showed that passengers who were alone had a lower chance of survival compared to those who were not alone.
+ - ### Effect of Being an Adult Male:
+      - The `adult_male` variable was analyzed to see its impact on survival. It was found that the vast majority of adult males did not survive.
+ - ### Gender Impact:
+      - The analysis of the `sex` variable showed that men had a higher mortality rate, while women were more likely to survive, confirming the notion that "women and children first" was applied during the evacuation.
+ - ### Embarkation Port Impact:
+      - The impact of the embarkation port (embark_town) on survival was analyzed. The majority of deceased passengers boarded at Southampton, which was also the port with the highest number of boardings.
+ - ### Impact of Having a Sibling/Spouse:
+      - The analysis of the `sibsp` variable indicated that passengers with siblings or spouses had better survival chances compared to those without.
 # Modeling with Logistic Regression
 Logistic Regression is used as the primary machine learning algorithm to predict the likelihood of passenger survival based on the available features. This choice was made due to its effectiveness in binary classification problems, such as survival prediction.
 Future sections will include details on how the model was trained, evaluated, and the insights gained from it.
