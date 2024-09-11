@@ -33,6 +33,21 @@ The next step in the analysis was to perform a binary analysis on the target var
       - The impact of the embarkation port (embark_town) on survival was analyzed. The majority of deceased passengers boarded at Southampton, which was also the port with the highest number of boardings.
  - ### Impact of Having a Sibling/Spouse:
       - The analysis of the `sibsp` variable indicated that passengers with siblings or spouses had better survival chances compared to those without.
+## Numerical Feature Analysis
+ - # Age distribution:
+   - Most passengers were between the ages of 25-35, with relatively few older passengers.
+ - # Fare Distribution:
+   - The majority of tickets were priced between 0-50. Analyzing the mode, mean, and median, it was determined that the fare data is right-skewed.
+   - The fare variable has the following distribution:
+      - ## Mode: $8.05
+      - ## Mean: $32.20
+      - ## Median: $14.45
+# Feature Engineering and Multicollinearity
+ - After examining the dataset, one-hot encoding was applied to categorical variables using `get_dummies`, and correlation analysis was conducted to detect multicollinearity.
+ ## Correlation Matrix Heatmap:
+  - It was observed that the least important variables in terms of survival were `embark_town_Queenstown`, `sibsp`, `age`, and `parch`.
+ ## Multicollinearity Check:
+  - Variables with high correlations were detected and dropped, such as `who_man` and `who_woman`, since sex_male already captured this information
 # Modeling with Logistic Regression
 Logistic Regression is used as the primary machine learning algorithm to predict the likelihood of passenger survival based on the available features. This choice was made due to its effectiveness in binary classification problems, such as survival prediction.
 Future sections will include details on how the model was trained, evaluated, and the insights gained from it.
